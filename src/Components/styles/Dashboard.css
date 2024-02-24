@@ -1,0 +1,67 @@
+.margin {
+  margin: 50px;
+}
+
+.description {
+  color: white;
+  text-align: justify;
+  padding: 30px;
+}
+
+.transparent-button {
+  background-color: transparent !important;
+  /* color: inherit; */
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+  border-radius: 0% !important;
+  border-color: white !important;
+}
+
+.transparent-button:hover {
+  background-color: white !important;
+  color: black !important;
+}
+
+.products {
+  color: white;
+  text-align: justify;
+}
+
+.products button {
+  display: flex;
+  padding-left: 68px;
+  text-align: center;
+}
+
+.abc {
+  text-align: justify;
+  color: gray;
+}
+
+.def {
+  max-height: 200px; /* Set the maximum height for the scrolling container */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+.ghi {
+  background-color: gray !important;
+  border-radius: 50px !important;
+  margin-left: 10px;
+  border-color: gray !important;
+}
+
+.client {
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+.client h3 {
+  color: white;
+  text-align: justify;
+}
+.client p {
+  text-align: end;
+}
+
+.carousel-item {
+  max-height: 500px !important;
+}
