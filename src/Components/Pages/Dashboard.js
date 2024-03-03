@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Carousel, Button } from 'react-bootstrap';
 import client from '../../assests/client.png';
 import '../styles/Dashboard.css';
+import VideoCarousel from '../Pages/CarouselComp'
 
 function Dashboard() {
   const headings = ['Thermal', 'POS', 'Desktop', 'Hospitality'];
@@ -137,6 +138,9 @@ function Dashboard() {
                   Explore diverse media collection: Ten must-see taste for every
                   pick
                 </p>
+                <div>
+                  <VideoCarousel />
+                </div>
               </div>
               <div className="col-lg-2">
                 <Button
