@@ -39,8 +39,10 @@
 }
 
 .def {
-  max-height: 200px; /* Set the maximum height for the scrolling container */
-  overflow-y: scroll; /* Enable vertical scrolling */
+  max-height: 200px;
+  /* Set the maximum height for the scrolling container */
+  overflow-y: scroll;
+  /* Enable vertical scrolling */
 }
 
 .ghi {
@@ -54,14 +56,23 @@
   margin-bottom: 20px;
   padding-top: 20px;
 }
+
 .client h3 {
   color: white;
   text-align: justify;
 }
+
 .client p {
   text-align: end;
 }
 
 .carousel-item {
   max-height: 500px !important;
+}
+
+.highlighted {
+  color: white;
+  /* Change to the desired color */
+  font-weight: bold;
+  /* Add any other styling as needed */
 }

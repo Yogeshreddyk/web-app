@@ -1,11 +1,26 @@
-import { Carousel } from 'react-bootstrap';
-import React from 'react';
-// import logo from '../../assests/logo.png';
+import React, { useState, useEffect } from 'react';
+import { Carousel, Button } from 'react-bootstrap';
 import client from '../../assests/client.png';
 import '../styles/Dashboard.css';
-import { Button } from 'react-bootstrap';
 
 function Dashboard() {
+  const headings = ['Thermal', 'POS', 'Desktop', 'Hospitality'];
+  const images = [
+    "https://via.placeholder.com/300x200",
+    "https://via.placeholder.com/400x200",
+    "https://via.placeholder.com/300x200",
+    "https://via.placeholder.com/600x200"
+  ];
+  const [currentHeadingIndex, setCurrentHeadingIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentHeadingIndex((prevIndex) => (prevIndex + 1) % headings.length);
+    }, 2000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div>
       <div className="Carousel">
@@ -15,7 +30,7 @@ function Dashboard() {
               className="d-block w-100"
               src="https://via.placeholder.com/300x200"
               alt="First slide"
-              // style={{ height: '200px !important' }}
+            // style={{ height: '200px !important' }}
             />
           </Carousel.Item>
           <Carousel.Item>
@@ -23,7 +38,7 @@ function Dashboard() {
               className="d-block w-100"
               src="https://via.placeholder.com/300x200"
               alt="First slide"
-              // style={{ maxHeight: '200px !important' }}
+            // style={{ maxHeight: '200px !important' }}
             />
           </Carousel.Item>
           <Carousel.Item>
@@ -31,7 +46,7 @@ function Dashboard() {
               className="d-block w-100"
               src="https://via.placeholder.com/300x200"
               alt="First slide"
-              // style={{ maxHeight: '200px !important' }}
+            // style={{ maxHeight: '200px !important' }}
             />
           </Carousel.Item>
         </Carousel>
@@ -43,7 +58,7 @@ function Dashboard() {
               src="https://via.placeholder.com/300x200"
               alt=""
               className="img-fluid mb-3"
-              // Add bottom margin
+            // Add bottom margin
             />
           </div>
           <div className="col-lg-6 description">
@@ -73,33 +88,28 @@ function Dashboard() {
               <Button className="transparent-button">Explore all</Button>
             </div>
           </div>
-          <div className=" row extraDiv">
+          <div className="row extraDiv">
             <div className="col-lg-4 abc">
-              <h6>Thermal</h6>
-              <h6>POS</h6>
-              <h6>Desktop</h6>
-              <h6>Hospitality</h6>
+              {headings.map((heading, index) => (
+                <h6 key={index} className={index === currentHeadingIndex ? 'highlighted' : ''}>
+                  {heading}
+                </h6>
+              ))}
               <Button className="ghi" style={{ marginLeft: '0px' }}>
                 View more
               </Button>
               <Button className="ghi">Get in touch</Button>
             </div>
             <div className="col-lg-8 def">
-              <img
-                src="https://via.placeholder.com/300x200"
-                alt=""
-                style={{ height: '100%', width: '100%' }}
-              />
-              <img
-                src="https://via.placeholder.com/300x200"
-                alt=""
-                style={{ height: '100%', width: '100%' }}
-              />
-              <img
-                src="https://via.placeholder.com/300x200"
-                alt=""
-                style={{ height: '100%', width: '100%' }}
-              />
+              {images.map((image, index) => (
+                <div key={index} style={{ display: index === currentHeadingIndex ? 'block' : 'none' }}>
+                  <img
+                    src={image}
+                    alt={`Image ${index}`}
+                    style={{ height: '100%', width: '100%' }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
           <div className="client">
